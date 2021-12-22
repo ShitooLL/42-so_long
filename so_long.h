@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 19:01:06 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 21:01:56 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	check_wall_x(char *line);
 */
 
 void	ft_display_texture(t_render *render,t_game *game, int x, int y);
-void	ft_load_texture(t_render *render, t_game *game);
+void	ft_load_texture(t_render *render, t_game **game);
 void	ft_init_map_2(t_render *render, t_game *game);
 int	set_up_window_2(t_render *render, t_game *game);
 char	**ft_get_map(int argc, char **argv, t_game *game);
@@ -72,7 +72,7 @@ int	ft_side_wall(char **map, int x, int y);
 int	ft_map_length(char **map, int x, int y);
 int	ft_valid_char(char **map, int x, int y);
 int	ft_check_map_char(char **map, int y);
-void	ft_free_map_data(t_game *game);
+void	ft_free_map_data(char **game_map);
 int	ft_file_linecount(char *file);
 
 int	ft_check_args(int argc, char **argv);

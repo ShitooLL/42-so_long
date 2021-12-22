@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:19:12 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 19:08:17 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 21:08:44 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ int	ft_check_map_char(char **map, int y)
 	e = 0;
 	while (i < y)
 	{
-		if (!(ft_strchr(map[i], 'C')) && c == 0)
+		if ((ft_strchr(map[i], 'C')) && c == 0)
 			c = 1;
-		if (!(ft_strchr(map[i], 'P')) && p == 0)
+		if ((ft_strchr(map[i], 'P')) && p == 0)
 			p = 1;
-		if (!(ft_strchr(map[i], 'E')) && e == 0)
+		if ((ft_strchr(map[i], 'E')) && e == 0)
 			e = 1;
 		if (e == 1 && p == 1 && c == 1)
 			return (1);
