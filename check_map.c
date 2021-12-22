@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/21 20:30:09 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 19:10:03 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ char	**ft_read_map(char *map_file, int *x, int *y)
 	if (fd < 0)
 		return (NULL);
 	map = malloc(sizeof(char *) * ((*y) + 1));
-	if (map)
+	if (!map)
 		return (NULL);
 	map[i] = get_next_line(fd);
-	*x = ft_strlen(map[i]);
+	*x = ft_strlen(map[i]) - 1;
 	while (map[i])
 	{
 		i++;
@@ -81,17 +81,17 @@ char	**ft_read_map(char *map_file, int *x, int *y)
 	return (map);
 }
 
-int	ft_check_map_value(t_game *game, int x, int y)
+int	ft_check_map_value(char **map, int x, int y)
 {
-	if (!ft_valid_char(game, x, y))
+	if (!ft_valid_char(map, x, y))
 		return (0);
-	else if (!ft_map_length(game, x, y))
+	else if (!ft_map_length(map, x, y))
 		return (0);
-	else if (!ft_check_map_char(game, y))
+	else if (!ft_check_map_char(map, y))
 		return (0);
-	else if (!ft_line_wall(game, x, y))
+	else if (!ft_line_wall(map, x, y))
 		return (0);
-	else if (!ft_side_wall(game, x, y))
+	else if (!ft_side_wall(map, x, y))
 		return (0);
 	return (1);
 }
@@ -106,9 +106,10 @@ char	**ft_get_map(int argc, char **argv, t_game *game)
 		return (NULL);
 	map = ft_read_map(argv[1], &x, &y);
 	if (map == NULL)
-		return (NULL);	
-	if (!ft_check_map_value(game, x, y))
+		return (NULL);
+	if (!ft_check_map_value(map, x, y))
 		return(NULL);
+	printf("x = %d, y = %d\n", x, y);
 	game->map_height = y;
 	game->map_length = x;
 	return (map);

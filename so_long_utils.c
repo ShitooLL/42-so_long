@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 00:05:06 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/21 01:06:51 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 15:39:41 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,3 +102,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
+void	ft_bzero(void *ptr, size_t n)
+{
+	size_t	i;
+	char	*tmpptr;
+
+	tmpptr = ptr;
+	i = 0;
+	while (i < n)
+	{
+		*(tmpptr + i) = '\0';
+		i++;
+	}
+}

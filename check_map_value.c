@@ -6,83 +6,52 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:19:12 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/21 00:56:12 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 19:08:17 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_line_wall(t_game *game, int x, int y)
-{
-	int i;
-
-	i = 0;
-	while (i <= x)
-	{
-		if (game->map_data[0][i] != '1')
-			return (0);
-		if (game->map_data[y][i] != '1')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	ft_side_wall(t_game *game, int x, int y)
-{
-	int i;
-
-	i = 0;
-	while (i <= y)
-	{
-		if (game->map_data[i][0] != '1')
-			return (0);
-		if (game->map_data[i][x] != '1')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	ft_map_length(t_game *game, int x, int y)
-{
-	int i;
-
-	i = 0;
-	while (i <= y)
-	{
-		if (ft_strlen(game->map_data[i]) != x)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	ft_valid_char(t_game *game, int x, int y)
+int	ft_valid_char(char **map, int x, int y)
 {
 	int	i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (j <= y)
+	while (j < y)
 	{
-		while (i <= x)
+		while (i < x)
 		{
-			if ((game->map_data[j][i] != '1') && 
-				(game->map_data[j][i] != '0') &&
-				(game->map_data[j][i] != 'C') &&
-				(game->map_data[j][i] != 'P') &&
-				(game->map_data[j][i] != 'E'))
+			if ((map[j][i] != '1') && (map[j][i] != '0') &&
+				(map[j][i] != 'C') && (map[j][i] != 'P') &&
+				(map[j][i] != 'E'))
 				return (0);
 			i++;
 		}
+		i = 0;
 		j++;
 	}
 	return (1);
 }
 
-int	ft_check_map_char(t_game *game, int y)
+int	ft_map_length(char **map, int x, int y)
+{
+	int i;
+
+	i = 0;
+	while (i < (y - 1))
+	{
+		if ((ft_strlen(map[i]) - 1) != x)
+			return (0);
+		i++;
+	}
+	if (ft_strlen(map[i]) != x)
+		return (0);
+	return (1);
+}
+
+int	ft_check_map_char(char **map, int y)
 {
 	int	c;
 	int	p;
@@ -93,17 +62,49 @@ int	ft_check_map_char(t_game *game, int y)
 	c = 0;
 	p = 0;
 	e = 0;
-	while (i <= y)
+	while (i < y)
 	{
-		if (!(ft_strchr(game->map_data[i], 'C')) && c == 0)
+		if (!(ft_strchr(map[i], 'C')) && c == 0)
 			c = 1;
-		if (!(ft_strchr(game->map_data[i], 'P')) && p == 0)
+		if (!(ft_strchr(map[i], 'P')) && p == 0)
 			p = 1;
-		if (!(ft_strchr(game->map_data[i], 'E')) && e == 0)
+		if (!(ft_strchr(map[i], 'E')) && e == 0)
 			e = 1;
 		if (e == 1 && p == 1 && c == 1)
 			return (1);
 		i++;
 	}
 	return (0);
+}
+
+int	ft_line_wall(char **map, int x, int y)
+{
+	int i;
+
+	i = 0;
+	while (i < x)
+	{
+		if (map[0][i] != '1')
+			return (0);
+		if (map[y - 1][i] != '1')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_side_wall(char **map, int x, int y)
+{
+	int i;
+
+	i = 0;
+	while (i < y)
+	{
+		if (map[i][0] != '1')
+			return (0);
+		if (map[i][x - 1] != '1')
+			return (0);
+		i++;
+	}
+	return (1);
 }

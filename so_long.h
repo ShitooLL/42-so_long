@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/21 20:12:03 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/22 19:01:06 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,20 @@ void	ft_load_texture(t_render *render, t_game *game);
 void	ft_init_map_2(t_render *render, t_game *game);
 int	set_up_window_2(t_render *render, t_game *game);
 char	**ft_get_map(int argc, char **argv, t_game *game);
-int	ft_check_map_value(t_game *game, int x, int y);
+int	ft_check_map_value(char **map, int x, int y);
 char	**ft_read_map(char *map_file, int *x, int *y);
-int	ft_line_wall(t_game *game, int x, int y);
-int	ft_side_wall(t_game *game, int x, int y);
-int	ft_map_length(t_game *game, int x, int y);
-int	ft_valid_char(t_game *game, int x, int y);
-int	ft_check_map_char(t_game *game, int y);
+int	ft_line_wall(char **map, int x, int y);
+int	ft_side_wall(char **map, int x, int y);
+int	ft_map_length(char **map, int x, int y);
+int	ft_valid_char(char **map, int x, int y);
+int	ft_check_map_char(char **map, int y);
 void	ft_free_map_data(t_game *game);
 int	ft_file_linecount(char *file);
 
 int	ft_check_args(int argc, char **argv);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int	ft_strlen(const char *s);
+void	ft_bzero(void *ptr, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_realloc(void **src, size_t size);
