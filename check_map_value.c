@@ -6,11 +6,12 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:19:12 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 21:08:44 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:34:49 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
 
 int	ft_valid_char(char **map, int x, int y)
 {
@@ -42,11 +43,11 @@ int	ft_map_length(char **map, int x, int y)
 	i = 0;
 	while (i < (y - 1))
 	{
-		if ((ft_strlen(map[i]) - 1) != x)
+		if ((ft_strlen(map[i]) - 1) != (size_t)x)
 			return (0);
 		i++;
 	}
-	if (ft_strlen(map[i]) != x)
+	if (ft_strlen(map[i]) != (size_t)x)
 		return (0);
 	return (1);
 }

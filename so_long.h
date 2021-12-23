@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 01:19:47 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:32:19 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
-
-# include "get_next_line.h"
 
 # define WALL "./asset/wall.xpm"
 # define GROUND "./asset/ground.xpm"
@@ -58,11 +56,11 @@ void	ft_free_map_data(char **game_map);
 int	ft_file_linecount(char *file);
 
 int	ft_check_args(int argc, char **argv);
+/*
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int	ft_strlen(const char *s);
 void	ft_bzero(void *ptr, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_realloc(void **src, size_t size);
-
+*/
 #endif

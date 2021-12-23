@@ -6,11 +6,11 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 21:05:56 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:31:07 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
+#include "libft.h"
 #include "so_long.h"
 
 int	ft_file_linecount(char *file)
@@ -24,7 +24,7 @@ int	ft_file_linecount(char *file)
 	if (!fd)
 		return (-1);
 	linecount = 1;
-	while (true)
+	while (1)
 	{
 		readcount = read(fd, &c, 1);
 		if (readcount == 0)

@@ -6,11 +6,12 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:32:02 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 01:19:33 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:24:23 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
 
 void	ft_init_map_2(t_render *render, t_game *game)
 {

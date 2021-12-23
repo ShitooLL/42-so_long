@@ -6,11 +6,12 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:50:03 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/21 01:08:00 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:25:08 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
 
 int	ft_check_args(int argc, char **argv)
 {

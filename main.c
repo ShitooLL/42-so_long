@@ -6,11 +6,12 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:18:26 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 21:01:30 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:25:04 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
 
 int	main(int argc, char **argv)
 {

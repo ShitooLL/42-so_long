@@ -6,12 +6,12 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 00:05:06 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 15:39:41 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 02:23:52 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/*
 int	ft_strlen(const char *s)
 {
 	int	i;
@@ -42,27 +42,6 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-
-void	*ft_realloc(void **src, size_t size)
-{
-	void	*dst;
-
-	dst = malloc(size);
-	if (!dst)
-	{
-		free((*src));
-		return (NULL);
-	}
-	if (!(*src))
-	{
-		free(dst);
-		return (NULL);
-	}
-	ft_memmove(dst, (*src), size);
-	free((*src));
-	(*src) = NULL;
-	return (dst);
 }
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -115,3 +94,4 @@ void	ft_bzero(void *ptr, size_t n)
 		i++;
 	}
 }
+*/
