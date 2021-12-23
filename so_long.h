@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 18:18:40 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 19:39:43 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	ft_check_move(int keycode, t_game *game);
 int	ft_check_col(t_game *game);
 int	ft_exit_open(t_game *game);
 void	ft_collectible(t_game *game);
+void	ft_exit(t_game *game);
 
 int	ft_check_args(int argc, char **argv);
 
