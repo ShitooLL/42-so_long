@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 01:37:47 by laliao            #+#    #+#             */
-/*   Updated: 2021/11/17 21:35:52 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 01:28:03 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_read_lines(char *s_line, int fd)
 	if (!buffer)
 		return (NULL);
 	r = 1;
-	while (!ft_strchr(s_line, '\n') && r != 0)
+	while (!ft_strchr_gnl(s_line, '\n') && r != 0)
 	{
 		r = read(fd, buffer, BUFFER_SIZE);
 		if (r == -1)
@@ -31,7 +31,7 @@ char	*ft_read_lines(char *s_line, int fd)
 			return (NULL);
 		}
 		buffer[r] = '\0';
-		s_line = ft_strjoin(s_line, buffer);
+		s_line = ft_strjoin_gnl(s_line, buffer);
 	}
 	free(buffer);
 	return (s_line);

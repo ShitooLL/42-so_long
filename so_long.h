@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/22 21:01:56 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 01:19:47 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,10 @@
 
 # include "get_next_line.h"
 
-# define WALL "./asset/bush.xpm"
+# define WALL "./asset/wall.xpm"
 # define GROUND "./asset/ground.xpm"
 # define EXIT "./asset/exit.xpm"
 # define COL "./asset/col.xpm"
-/*
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}	t_point;
-*/
 
 typedef struct s_game
 {
@@ -48,17 +41,6 @@ typedef struct s_render
 	void	*mlx;
 	void	*window;
 }	t_render;
-
-/*
-void	init_map(void *mlx, void *window, int fd);
-int	display_wall(void *mlx, void *window, char *map_line, int y);
-int	display_ground(void *mlx, void *window, char *map_line, int y);
-void	*set_up_window(void *mlx, t_point *screen);
-t_point	*check_map(char *argv, t_point *screen);
-int	check_value(t_point *screen, char *line);
-t_point	*ft_init_value(t_point *screen);
-int	check_wall_x(char *line);
-*/
 
 void	ft_display_texture(t_render *render,t_game *game, int x, int y);
 void	ft_load_texture(t_render *render, t_game **game);
@@ -84,4 +66,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_realloc(void **src, size_t size);
 
 #endif
-

@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 23:34:36 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/20 00:53:10 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 01:27:35 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 #  define BUFFER_SIZE 4000
 # endif
 
-char	*ft_strjoin(char *left_str, char *buff);
-char	*ft_strchr(char *s, int c);
+char	*ft_strjoin_gnl(char *left_str, char *buff);
+char	*ft_strchr_gnl(char *s, int c);
 char	*ft_read_lines(char *s_line, int fd);
 char	*ft_get_read_line(char *s);
 char	*ft_remove_read_line(char *s);
