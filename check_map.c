@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 02:31:07 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 20:16:26 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,30 +84,15 @@ char	**ft_read_map(char *map_file, int *x, int *y)
 int	ft_check_map_value(char **map, int x, int y)
 {
 	if (!ft_map_length(map, x, y))
-	{
-		printf("Unvalid map length");
-		return (0);
-	}
+		return (ft_error("Unvalid map length"));
 	else if (!ft_valid_char(map, x, y))
-	{
-		printf("Unvalid character");
-		return (0);
-	}
+		return (ft_error("Unvalid character"));
 	else if (!ft_check_map_char(map, y))
-	{
-		printf("Unvalid map, need atleast 1 exit, collectable and start");
-		return (0);
-	}
+		return (ft_error("Need atleast 1 exit, 1 collectable and 1 start"));
 	else if (!ft_line_wall(map, x, y))
-	{
-		printf("Unvalid line wall");
-		return (0);
-	}
+		return (ft_error("Unvalid line wall"));
 	else if (!ft_side_wall(map, x, y))
-	{
-		printf("Unvalid side wall");
-		return (0);
-	}
+		return (ft_error("Unvalid side wall\n"));
 	return (1);
 }
 
@@ -127,7 +112,6 @@ char	**ft_get_map(int argc, char **argv, t_game *game)
 		ft_free_map_data(map);
 		return (NULL);
 	}
-	printf("x = %d, y = %d\n", x, y);
 	game->map_height = y;
 	game->map_length = x;
 	return (map);

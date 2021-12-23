@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 19:39:43 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 20:39:43 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_p_pos
 {
 	int		p_x;
 	int		p_y;
+	int		p1;
 }	t_p_pos;
 
 typedef struct s_game
@@ -81,6 +82,8 @@ int	ft_check_col(t_game *game);
 int	ft_exit_open(t_game *game);
 void	ft_collectible(t_game *game);
 void	ft_exit(t_game *game);
+int	ft_exit_redcross(t_game *game);
+int	ft_error(char *err_msg);
 
 int	ft_check_args(int argc, char **argv);
 

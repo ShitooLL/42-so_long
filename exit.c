@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 19:03:55 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 19:52:51 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 20:40:43 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,17 @@ void	ft_exit(t_game *game)
 	free(game->render.mlx);
 	ft_free_map_data(game->map_data);
 	exit(0);
+}
+
+int	ft_exit_redcross(t_game *game)
+{
+	ft_exit(game);
+	return (0);
+}
+
+int	ft_error(char *err_msg)
+{
+	printf("Error\n");
+	printf("%s\n", err_msg);
+	return (0);
 }

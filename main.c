@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:18:26 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 19:39:11 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 20:40:20 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ int	main(int argc, char **argv)
 	if (!(set_up_window_2(&game_data)))
 		return (-1);
 	ft_init_map_2(&game_data);
-	printf("player x : %d\n", game_data.player.p_x);
-	printf("player y : %d\n", game_data.player.p_y);
 	mlx_key_hook(game_data.render.win, ft_key_event, &game_data);
+	mlx_hook(game_data.render.win, 17 , 1L<<17, ft_exit_redcross, &game_data);
 	mlx_loop(game_data.render.mlx);
 	return (0);
 }
