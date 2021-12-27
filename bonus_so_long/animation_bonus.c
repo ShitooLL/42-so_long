@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 20:55:07 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:05:24 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 22:55:50 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,17 @@ void	ft_ani_player_2(t_game *game)
 
 int	ft_loop_hook(t_game *game)
 {
-	if (ft_eaten(game))
-		return (0);
-	ft_enemy(game);
-	game->speed++;
 	if (game->exit && game->map_data[game->player.p_y][game->player.p_x] == 'E')
+		return (0);
+	else if (ft_eaten(game))
 		return (0);
 	else if (game->player.curr < 2)
 		ft_ani_player_1(game);
 	else
 		ft_ani_player_2(game);
+	ft_enemy(game);
+	game->speed++;
 	game->counter++;
+	game->enemy.counter++;
 	return (0);
 }

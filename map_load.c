@@ -6,14 +6,14 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:32:02 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:50:29 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 21:16:36 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
 
-void	ft_init_map_2(t_game *game)
+void	ft_init_map(t_game *game)
 {
 	int	i;
 	int	j;

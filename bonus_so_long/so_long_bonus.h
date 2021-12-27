@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:27:20 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 22:59:53 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 # define P4 "../asset/sheep4.xpm"
 # define END "../asset/end.xpm"
 # define ENE "../asset/enemy.xpm"
+# define EN2 "../asset/enemy2.xpm"
+# define EN4 "../asset/enemy4.xpm"
 # define EAT "../asset/eaten.xpm"
 
 # define TILE 25
@@ -35,7 +37,8 @@
 # define KEY_S 115
 # define KEY_D 100
 # define ESC 65307
-# define FRAME 6500
+# define FRAME 15000
+# define SPEED 35000
 
 typedef struct s_render
 {
@@ -59,8 +62,9 @@ typedef struct s_enemy
 	int			a;
 	int			s;
 	int			d;
-	int			dir_v;
-	int			dir_h;
+	int			curr;
+	int			counter;
+	void		*img_curr;
 }	t_enemy;
 
 typedef struct s_game
@@ -78,6 +82,8 @@ typedef struct s_game
 	void		*img_p4;
 	void		*img_end;
 	void		*img_ene;
+	void		*img_ene2;
+	void		*img_ene4;
 	void		*img_eat;
 	int			exit;
 	int			move;
@@ -90,8 +96,8 @@ typedef struct s_game
 
 void	ft_display_texture(t_game *game, int x, int y);
 void	ft_load_texture(t_game **game);
-void	ft_init_map_2(t_game *game);
-int		set_up_window_2(t_game *game);
+void	ft_init_map(t_game *game);
+int		set_up_window(t_game *game);
 char	**ft_get_map(int argc, char **argv, t_game *game);
 int		ft_check_map_value(char **map, int x, int y);
 char	**ft_read_map(char *map_file, int *x, int *y);
@@ -122,6 +128,9 @@ void	ft_move_enemy_a(t_game *game, int x, int y);
 void	ft_move_enemy_d(t_game *game, int x, int y);
 void	ft_enemy(t_game *game);
 int		ft_eaten(t_game *game);
+
+void	ft_ani_enemy_2(t_game *game);
+void	ft_ani_enemy_1(t_game *game);
 
 int		ft_check_args(int argc, char **argv);
 

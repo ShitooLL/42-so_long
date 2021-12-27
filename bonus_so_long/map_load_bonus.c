@@ -6,14 +6,14 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:32:02 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:23:18 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 22:59:54 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 #include "libft.h"
 
-void	ft_init_map_2(t_game *game)
+void	ft_init_map(t_game *game)
 {
 	int	i;
 	int	j;
@@ -50,6 +50,8 @@ void	ft_load_texture(t_game **game)
 	(*game)->img_p4 = mlx_xpm_file_to_image((*game)->render.mlx, P4, &r, &r);
 	(*game)->img_end = mlx_xpm_file_to_image((*game)->render.mlx, END, &r, &r);
 	(*game)->img_ene = mlx_xpm_file_to_image((*game)->render.mlx, ENE, &r, &r);
+	(*game)->img_ene2 = mlx_xpm_file_to_image((*game)->render.mlx, EN2, &r, &r);
+	(*game)->img_ene4 = mlx_xpm_file_to_image((*game)->render.mlx, EN4, &r, &r);
 	(*game)->img_eat = mlx_xpm_file_to_image((*game)->render.mlx, EAT, &r, &r);
 }
 

@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:52:55 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 21:12:10 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ typedef struct s_game
 
 void	ft_display_texture(t_game *game, int x, int y);
 void	ft_load_texture(t_game **game);
-void	ft_init_map_2(t_game *game);
-int		set_up_window_2(t_game *game);
+void	ft_init_map(t_game *game);
+int		set_up_window(t_game *game);
 char	**ft_get_map(int argc, char **argv, t_game *game);
 int		ft_check_map_value(char **map, int x, int y);
 char	**ft_read_map(char *map_file, int *x, int *y);
