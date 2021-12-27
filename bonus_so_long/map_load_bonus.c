@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:32:02 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 04:33:57 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:23:18 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_init_map_2(t_game *game)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -53,21 +53,9 @@ void	ft_load_texture(t_game **game)
 	(*game)->img_eat = mlx_xpm_file_to_image((*game)->render.mlx, EAT, &r, &r);
 }
 
-void	ft_display_texture(t_game *game, int x, int y)
+void	ft_display_texture_2(t_game *game, int x, int y)
 {
-	if (game->map_data[y][x] == '1')
-		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_1,
-			x * TILE, y * TILE);			
-	else if (game->map_data[y][x] == '0')
-		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_0,
-			x * TILE, y * TILE);
-	else if (game->map_data[y][x] == 'C')
-		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_c,
-			x * TILE, y * TILE);
-	else if	(game->map_data[y][x] == 'E')
-		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
-			x * TILE, y * TILE);
-	else if	(game->map_data[y][x] == 'P' && game->player.p1 == 0)
+	if (game->map_data[y][x] == 'P' && game->player.p1 == 0)
 	{
 		game->player.p1 = 1;
 		game->player.p_x = x;
@@ -75,10 +63,27 @@ void	ft_display_texture(t_game *game, int x, int y)
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_p,
 			x * TILE, y * TILE);
 	}
-	else if (game->map_data[y][x] == 'P' && game->player.p1 == 1)	
+	else if (game->map_data[y][x] == 'P' && game->player.p1 == 1)
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_0,
 			x * TILE, y * TILE);
 	else if (game->map_data[y][x] == 'H' || game->map_data[y][x] == 'V')
 		mlx_put_image_to_window(game->render.mlx, game->render.win,
 			game->img_ene, x * TILE, y * TILE);
+}
+
+void	ft_display_texture(t_game *game, int x, int y)
+{
+	if (game->map_data[y][x] == '1')
+		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_1,
+			x * TILE, y * TILE);
+	else if (game->map_data[y][x] == '0')
+		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_0,
+			x * TILE, y * TILE);
+	else if (game->map_data[y][x] == 'C')
+		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_c,
+			x * TILE, y * TILE);
+	else if (game->map_data[y][x] == 'E')
+		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
+			x * TILE, y * TILE);
+	ft_display_texture_2(game, x, y);
 }

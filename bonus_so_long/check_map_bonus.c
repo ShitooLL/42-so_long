@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 01:53:08 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:06:10 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_file_linecount(char *file)
 
 void	ft_free_map_data(char **game_map)
 {
-	int i;
-	char **map;
+	int		i;
+	char	**map;
 
 	map = game_map;
 	i = 0;
@@ -98,9 +98,9 @@ int	ft_check_map_value(char **map, int x, int y)
 
 char	**ft_get_map(int argc, char **argv, t_game *game)
 {
-	int	x;
-	int	y;
-	char **map;
+	int		x;
+	int		y;
+	char	**map;
 
 	if (!ft_check_args(argc, argv))
 		return (NULL);

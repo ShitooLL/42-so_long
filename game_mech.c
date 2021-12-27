@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:13:42 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 18:12:48 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:45:08 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	ft_check_col(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 1;
 	while (j < game->map_height - 1)
@@ -35,8 +35,8 @@ int	ft_check_col(t_game *game)
 
 int	ft_exit_open(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 1;
 	while (j < game->map_height - 1)

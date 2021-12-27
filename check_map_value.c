@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:19:12 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 02:34:49 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:43:46 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_valid_char(char **map, int x, int y)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -38,7 +38,7 @@ int	ft_valid_char(char **map, int x, int y)
 
 int	ft_map_length(char **map, int x, int y)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < (y - 1))
@@ -80,7 +80,7 @@ int	ft_check_map_char(char **map, int y)
 
 int	ft_line_wall(char **map, int x, int y)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < x)
@@ -96,7 +96,7 @@ int	ft_line_wall(char **map, int x, int y)
 
 int	ft_side_wall(char **map, int x, int y)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < y)

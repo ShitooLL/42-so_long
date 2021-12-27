@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 20:06:00 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 20:15:47 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:51:51 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	set_up_window_2(t_game *game)
 
 	screen_width = TILE * game->map_length;
 	screen_height = TILE * game->map_height;
-	game->render.win = mlx_new_window(game->render.mlx, screen_width, screen_height, "so_long");
+	game->render.win = mlx_new_window(game->render.mlx,
+			screen_width, screen_height, "so_long");
 	return (1);
 }

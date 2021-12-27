@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:55:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 01:53:20 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/27 20:25:02 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 void	ft_move_w(t_game *game)
 {
-	mlx_put_image_to_window(game->render.mlx, game->render.win, game->player.img_curr,
-		game->player.p_x * TILE, (game->player.p_y - 1) * TILE);
+	mlx_put_image_to_window(game->render.mlx, game->render.win,
+		game->player.img_curr, game->player.p_x * TILE,
+		(game->player.p_y - 1) * TILE);
 	if (game->map_data[game->player.p_y][game->player.p_x] == 'E')
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
 			game->player.p_x * TILE, game->player.p_y * TILE);
@@ -28,8 +29,9 @@ void	ft_move_w(t_game *game)
 
 void	ft_move_a(t_game *game)
 {
-	mlx_put_image_to_window(game->render.mlx, game->render.win, game->player.img_curr,
-		(game->player.p_x - 1) * TILE, game->player.p_y * TILE);
+	mlx_put_image_to_window(game->render.mlx, game->render.win,
+		game->player.img_curr, (game->player.p_x - 1) * TILE,
+		game->player.p_y * TILE);
 	if (game->map_data[game->player.p_y][game->player.p_x] == 'E')
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
 			game->player.p_x * TILE, game->player.p_y * TILE);
@@ -41,8 +43,9 @@ void	ft_move_a(t_game *game)
 
 void	ft_move_s(t_game *game)
 {
-	mlx_put_image_to_window(game->render.mlx, game->render.win, game->player.img_curr,
-		game->player.p_x * TILE, (game->player.p_y + 1) * TILE);
+	mlx_put_image_to_window(game->render.mlx, game->render.win,
+		game->player.img_curr, game->player.p_x * TILE,
+		(game->player.p_y + 1) * TILE);
 	if (game->map_data[game->player.p_y][game->player.p_x] == 'E')
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
 			game->player.p_x * TILE, game->player.p_y * TILE);
@@ -54,8 +57,9 @@ void	ft_move_s(t_game *game)
 
 void	ft_move_d(t_game *game)
 {
-	mlx_put_image_to_window(game->render.mlx, game->render.win, game->player.img_curr,
-		(game->player.p_x + 1) * TILE, game->player.p_y * TILE);
+	mlx_put_image_to_window(game->render.mlx, game->render.win,
+		game->player.img_curr, (game->player.p_x + 1) * TILE,
+		game->player.p_y * TILE);
 	if (game->map_data[game->player.p_y][game->player.p_x] == 'E')
 		mlx_put_image_to_window(game->render.mlx, game->render.win, game->img_e,
 			game->player.p_x * TILE, game->player.p_y * TILE);
