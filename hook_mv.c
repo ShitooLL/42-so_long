@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 16:45:55 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/23 19:45:41 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/23 23:03:36 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	ft_key_event(int keycode, t_game *game)
 		ft_collectible(game);
 	}
 	else if (keycode == ESC)
-	{
-		printf("ESC\n");
 		ft_exit(game);
-	}
 	if (game->exit && game->map_data[game->player.p_y][game->player.p_x] == 'E')
 	{
 		printf("GG\n");
