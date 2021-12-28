@@ -6,7 +6,7 @@
 #    By: laliao <laliao@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 19:13:44 by laliao            #+#    #+#              #
-#    Updated: 2021/12/28 17:37:57 by laliao           ###   ########.fr        #
+#    Updated: 2021/12/28 20:10:41 by laliao           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,14 +48,14 @@ HEADER			= -I ${INCLUDE} -I libft -I minilibx
 ${NAME}:		${OBJ}
 					make -C libft
 					make -C minilibx
-					${CC} ${FLAGS} ${LD_FLAGS} ${OBJ} -o ${NAME} -lft ${MLX_FLAGS}
+					${CC} -fsanitize=address -g3 ${FLAGS} ${LD_FLAGS} ${OBJ} -o ${NAME} -lft ${MLX_FLAGS}
 
 all:			${NAME}
 
 bonus:			${OBJ_BONUS}
 					make -C libft
 					make -C minilibx
-					${CC} -g3 ${FLAGS} ${LD_FLAGS} ${OBJ_BONUS} -o ${NAME} -lft ${MLX_FLAGS}
+					${CC} -fsanitize=address -g3 ${FLAGS} ${LD_FLAGS} ${OBJ_BONUS} -o ${NAME}_bonus -lft ${MLX_FLAGS}
 
 clean:
 					make clean -C libft
@@ -65,6 +65,7 @@ clean:
 fclean:			clean
 					make fclean -C libft
 					${RM} ${NAME}
+					${RM} ${NAME}_bonus
 
 re:				fclean all
 

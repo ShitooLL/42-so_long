@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 20:06:10 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 19:38:52 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ char	**ft_read_map(char *map_file, int *x, int *y)
 
 	i = 0;
 	*y = ft_file_linecount(map_file);
-	if ((*y) <= 0)
-		return (NULL);
 	fd = open(map_file, O_RDONLY);
-	if (fd < 0)
+	if ((*y) <= 0 || (fd < 0))
 		return (NULL);
 	map = malloc(sizeof(char *) * ((*y) + 1));
 	if (!map)
 		return (NULL);
 	map[i] = get_next_line(fd);
+	if (!(map[i]))
+		return (NULL);
 	*x = ft_strlen(map[i]) - 1;
 	while (map[i])
 	{
