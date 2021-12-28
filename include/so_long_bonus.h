@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/28 18:54:45 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 22:11:49 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,6 @@ int		ft_eaten(t_game *game);
 void	ft_ani_enemy_2(t_game *game);
 void	ft_ani_enemy_1(t_game *game);
 
-int		ft_check_args(int argc, char **argv);
+int		ft_check_args(int argc, char **argv, t_game *game);
 
 #endif

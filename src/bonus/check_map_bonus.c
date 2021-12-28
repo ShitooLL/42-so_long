@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/28 21:58:01 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 22:46:49 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ char	**ft_read_map(char *map_file, int *x, int *y)
 	i = 0;
 	*y = ft_file_linecount(map_file);
 	fd = open(map_file, O_RDONLY);
-	if ((*y) <= 0 || (fd < 0))
+	if ((*y) <= 2 || (fd < 0))
 		return (NULL);
 	map = malloc(sizeof(char *) * ((*y) + 1));
 	if (!map)
 		return (NULL);
 	map[i] = get_next_line(fd);
 	if (!(map[i]))
-		return (NULL);
+		return (map);
 	*x = ft_strlen(map[i]) - 1;
 	while (map[i])
 	{
@@ -102,11 +102,15 @@ char	**ft_get_map(int argc, char **argv, t_game *game)
 	int		y;
 	char	**map;
 
-	if (!ft_check_args(argc, argv))
+	if (!ft_check_args(argc, argv, game))
 		return (NULL);
 	map = ft_read_map(argv[1], &x, &y);
-	if (map == NULL)
+	if (!map)
+	{
+		free(game->render.mlx);
+		ft_error("Map too short or can't be read");
 		return (NULL);
+	}
 	if (!ft_check_map_value(map, x, y))
 	{
 		free(game->render.mlx);

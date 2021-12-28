@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/28 19:15:35 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 22:11:40 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,6 @@ void	ft_free_img_error(t_game *game);
 
 char	*ft_display_move(int move);
 
-int		ft_check_args(int argc, char **argv);
+int		ft_check_args(int argc, char **argv, t_game *game);
 
 #endif
