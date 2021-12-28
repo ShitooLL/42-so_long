@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:18:26 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/27 21:12:18 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 19:14:47 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ int	main(int argc, char **argv)
 	t_game	game_data;
 
 	ft_bzero(&game_data, sizeof(game_data));
+	game_data.render.mlx = mlx_init();
+	if (!(game_data.render.mlx))
+		return (-1);
 	game_data.map_data = ft_get_map(argc, argv, &game_data);
 	if (game_data.map_data == NULL)
 		return (-1);
-	game_data.render.mlx = mlx_init();
 	if (!(set_up_window(&game_data)))
 		return (-1);
 	ft_init_map(&game_data);

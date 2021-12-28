@@ -6,7 +6,7 @@
 #    By: laliao <laliao@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 19:13:44 by laliao            #+#    #+#              #
-#    Updated: 2021/12/28 03:15:14 by laliao           ###   ########.fr        #
+#    Updated: 2021/12/28 17:37:57 by laliao           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ all:			${NAME}
 bonus:			${OBJ_BONUS}
 					make -C libft
 					make -C minilibx
-					${CC} ${FLAGS} ${LD_FLAGS} ${OBJ_BONUS} -o ${NAME} -lft ${MLX_FLAGS}
+					${CC} -g3 ${FLAGS} ${LD_FLAGS} ${OBJ_BONUS} -o ${NAME} -lft ${MLX_FLAGS}
 
 clean:
 					make clean -C libft
@@ -68,4 +68,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re bonus

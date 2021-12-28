@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:46:40 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/28 03:09:57 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 18:54:45 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@
 # define KEY_S 115
 # define KEY_D 100
 # define ESC 65307
-# define FRAME 35000
-# define SPEED 55000
+# define FRAME 15000
+# define SPEED 35000
 
 typedef struct s_render
 {
@@ -95,7 +95,7 @@ typedef struct s_game
 }	t_game;
 
 void	ft_display_texture(t_game *game, int x, int y);
-void	ft_load_texture(t_game **game);
+void	ft_load_texture(t_game *game);
 void	ft_init_map(t_game *game);
 int		set_up_window(t_game *game);
 char	**ft_get_map(int argc, char **argv, t_game *game);
@@ -118,6 +118,7 @@ void	ft_collectible(t_game *game);
 void	ft_exit(t_game *game);
 int		ft_exit_redcross(t_game *game);
 int		ft_error(char *err_msg);
+void	ft_free_img_error(t_game *game);
 void	ft_display_move(t_game *game);
 
 int		ft_loop_hook(t_game *game);
