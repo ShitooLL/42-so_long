@@ -6,7 +6,7 @@
 /*   By: laliao <laliao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:39:22 by laliao            #+#    #+#             */
-/*   Updated: 2021/12/28 19:38:52 by laliao           ###   ########.fr       */
+/*   Updated: 2021/12/28 21:54:02 by laliao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ char	**ft_get_map(int argc, char **argv, t_game *game)
 		return (NULL);
 	if (!ft_check_map_value(map, x, y))
 	{
+		free(game->render.mlx);
 		ft_free_map_data(map);
 		return (NULL);
 	}
